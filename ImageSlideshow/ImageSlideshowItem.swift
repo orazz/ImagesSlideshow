@@ -25,7 +25,7 @@ public class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
     
     var imageUrl: String! {
         didSet {
-            if self.imageView.image == nil {
+            //if self.imageView.image == nil {
                 imageView.setImageWithURL(NSURL(string: imageUrl), completed: { [weak self]
                     (image:UIImage!, error:NSError!, type:SDImageCacheType, url:NSURL!) -> Void in
                     self?.imageView.alpha = 0.0
@@ -42,7 +42,7 @@ public class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
                         self?.imageView.alpha = 1.0
                     }
                 }, usingActivityIndicatorStyle: .WhiteLarge)
-            }
+           // }
         }
     }
     
