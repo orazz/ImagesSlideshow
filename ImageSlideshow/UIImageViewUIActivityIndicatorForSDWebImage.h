@@ -5,9 +5,8 @@
 //  Created by Giacomo Saccardo.
 //  Copyright (c) 2014 Giacomo Saccardo. All rights reserved.
 //
-
+/*
 #import <Foundation/Foundation.h>
-#import "SDWebImage/UIImageView+WebCache.h"
 #import "SDWebImage/SDImageCache.h"
 
 @interface UIImageView (UIActivityIndicatorForSDWebImage)
@@ -25,3 +24,4 @@
 - (void)removeActivityIndicator;
 
 @end
+*/

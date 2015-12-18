@@ -5,7 +5,7 @@
 //  Created by Giacomo Saccardo.
 //  Copyright (c) 2014 Giacomo Saccardo. All rights reserved.
 //
-
+/*
 #import "UIImageViewUIActivityIndicatorForSDWebImage.h"
 #import <objc/runtime.h>
 
@@ -116,3 +116,4 @@ static char TAG_ACTIVITY_INDICATOR;
 }
 
 @end
+*/

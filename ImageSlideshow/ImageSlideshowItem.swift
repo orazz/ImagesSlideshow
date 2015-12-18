@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+//import SDWebImage
 
 @objc public protocol ImageSlideshowItemDelegate: class {
     func twoTap(isZoomed:Bool)
@@ -25,8 +25,18 @@ public class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
     
     var imageUrl: String! {
         didSet {
+            if let url = NSURL(string: imageUrl) {
+                imageView.kf_showIndicatorWhenLoading = true
+                imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, completionHandler: {
+                    [weak self](image, error, cacheType, imageURL) -> () in
+                    UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseIn, animations: { () -> Void in
+                        self?.imageView.alpha = 1
+                        }, completion: nil)
+                    })
+                
+            }
             //if self.imageView.image == nil {
-                imageView.setImageWithURL(NSURL(string: imageUrl), completed: { [weak self]
+                /*imageView.setImageWithURL(NSURL(string: imageUrl), completed: { [weak self]
                     (image:UIImage!, error:NSError!, type:SDImageCacheType, url:NSURL!) -> Void in
                     self?.imageView.alpha = 0.0
                     if error != nil {
@@ -41,7 +51,8 @@ public class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
                     }else{
                         self?.imageView.alpha = 1.0
                     }
-                }, usingActivityIndicatorStyle: .WhiteLarge)
+                }, usingActivityIndicatorStyle: .WhiteLarge)*/
+            
            // }
         }
     }

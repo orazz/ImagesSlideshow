@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var imagesPath = [ImageSource]()
-        imagesPath.append(ImageSource(imageString: "https://pp.vk.me/c543105/v543105254/a5c7/wyt-inDVeiY.jpg")!)
+        imagesPath.append(ImageSource(imageString: "")!)
         imagesPath.append(ImageSource(imageString: "https://pp.vk.me/c543105/v543105254/a5c7/wyt-inDVeiY.jpg")!)
         
         let recognizer = UITapGestureRecognizer(target: self, action: "click:")
@@ -56,14 +56,14 @@ class ViewController: UIViewController {
 
     func fullScreen(sender: UIGestureRecognizer) {
         let ctr = FullScreenSlideshowViewController()
-        ctr.descriptionOfImage = [ ["Ищете вдохновения? Нужны свежие решения в оформлении помещения? Хотите обновить интерьер вашего дома? Тогда вы пришли по адресу. В нашей группе Дизайн интерьера, ремонт - Вира-АртСтрой вы найдете много необычных и интересных идей для современного декора или дизайна помещений. Присоединяйтесь к нам! Будет интересно."], ["По воссоединяется с семьей: новый дублированный трейлер мультфильма «Кунг-фу Панда 3»"], ["s3"]]
-        let imagesPath = [ImageSource](count: 3, repeatedValue: ImageSource(imageString: "")!)
+        ctr.descriptionOfImage = [ ["Ищете вдохновения? Нужны свежие решения в оформлении помещения? Хотите обновить интерьер вашего дома? Тогда вы пришли по адресу. В нашей группе Дизайн интерьера, ремонт - Вира-АртСтрой вы найдете много необычных и интересных идей для современного декора или дизайна помещений. Присоединяйтесь к нам! Будет интересно."], ["По воссоединяется с семьей: новый дублированный трейлер мультфильма «Кунг-фу Панда 3»"], ["s3"], ["s4"]]
+        let imagesPath = [ImageSource](count: 4, repeatedValue: ImageSource(imageString: "")!)
         ctr.inputs = imagesPath
         ctr.initialPage = 1
         ctr.urlForShare = "s"
         ctr.shareImage = true
         
-        ctr.urlsOfImages = ["http://www.marcpina.com/wp-content/uploads/2014/08/one.png", "http://skiblandford.org/wp-content/uploads/2015/04/two.png", "http://connective.skapaflex.com/wp-content/uploads/three.png"]
+        ctr.urlsOfImages = ["https://pp.vk.me/c625621/v625621656/2521f/gNUXgiY4sSE.jpg", "http://media.ashgabat2017.gov.tm/thumb/870/382/media/sliders/pictures/40/original_3.jpg", "http://media.ashgabat2017.gov.tm/thumb/870/382/media/sliders/pictures/42/original_5.jpg", "http://media.ashgabat2017.gov.tm/thumb/870/382/media/sliders/pictures/39/original_2.jpg"]
         self.presentViewController(ctr, animated: true, completion: nil)
     }
 

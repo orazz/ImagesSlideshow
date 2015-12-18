@@ -4,6 +4,5 @@
 
 #ifndef ImageSlideshow_Bridging_Header_h
 #define ImageSlideshow_Bridging_Header_h
-#import "SDWebImage/UIImageView+WebCache.h"
 #import "UIImageViewUIActivityIndicatorForSDWebImage.h"
 #endif

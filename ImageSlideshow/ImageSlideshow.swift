@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 @objc public protocol InputSource {
     func setToImageView(imageView: UIImageView, load: Bool);
@@ -39,12 +39,20 @@ public class ImageSource: NSObject, InputSource {
     @objc public func setToImageView(imageView: UIImageView, load: Bool) {
         if load {
             let url_str = imageString
-            imageView.sd_setImageWithURL(NSURL(string: url_str), placeholderImage: nil) {
+            if let url = NSURL(string: url_str) {
+                imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: nil, completionHandler: {
+                    (image, error, cacheType, imageURL) -> () in
+                    UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseIn, animations: { () -> Void in
+                        imageView.image = image
+                        }, completion: nil)
+                    })
+            }
+            /*imageView.sd_setImageWithURL(NSURL(string: url_str), placeholderImage: nil) {
                     (image:UIImage!, error:NSError!, type:SDImageCacheType, url:NSURL!) -> Void in
                     if error == nil {
                         imageView.image = image
                     }
-            }
+            }*/
         }
     }
 }
